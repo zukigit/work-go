@@ -2,3 +2,4 @@ go 1.21.8
 
 use ./chan
 use ./pntr
+use ./map
