@@ -3,3 +3,4 @@ go 1.20
 use ./chan
 use ./pntr
 use ./map
+use ./type-assertions
