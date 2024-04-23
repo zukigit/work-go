@@ -4,3 +4,4 @@ use ./chan
 use ./pntr
 use ./map
 use ./type-assertions
+use ./cgo
