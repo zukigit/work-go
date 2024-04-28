@@ -10,5 +10,5 @@ import "fmt"
 
 func main() {
 	result := C.add(1, 2)
-	fmt.Println(result)
+	fmt.Println("result:", result)
 }
