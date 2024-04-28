@@ -2,6 +2,7 @@ package main
 
 /*
 #cgo CFLAGS: -g -Wall
+#cgo LDFLAGS: ./Cfiles/test.o
 #include "headers/test.h"
 */
 import "C"
