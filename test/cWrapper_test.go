@@ -7,6 +7,6 @@ func TestCallTest(t *testing.T) {
 	want := 69
 
 	if got != want {
-		t.Errorf("got %d, wanted %d", got, want)
+		t.Errorf("got %d, wanted %d ", got, want)
 	}
 }
