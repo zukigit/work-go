@@ -1,12 +1,20 @@
 package main
 
+import (
+	"fmt"
+	"unsafe"
+)
+
 /*
 #cgo CFLAGS: -g -Wall
 #cgo LDFLAGS: ./src/jalibs/libjacommon_a-jalockutil.o ./src/libs/zbxcommon/str.o ./src/jalibs/libjacommon_a-jafile.o ./src/libs/zbxlog/log.o ./tools/json-c-0.9/json_object.o ./tools/json-c-0.9/printbuf.o ./tools/json-c-0.9/arraylist.o ./tools/json-c-0.9/linkhash.o ./src/libs/zbxsys/threads.o ./src/libs/zbxcommon/misc.o ./src/libs/zbxsys/mutexs.o
+
 #include "./jainclude/jalockutil.h"
+#include <stdlib.h>
+
 char	*CONFIG_LOG_FILE	 = "/var/log/jobarranger/jobarg_server.log";
 int CONFIG_DB_CON_COUNT = 10;
-char	*CONFIG_TMPDIR = NULL;
+char	*CONFIG_TMPDIR = "/var/lib/jobarranger/tmp/";
 int	CONFIG_LOG_FILE_SIZE	= 1;
 char	*CONFIG_FILE		 = "/home/zuki/Documents/dev/work/jobarranger-6.0.5.1/jaconf/jobarg_server.conf";
 
@@ -27,6 +35,9 @@ const char	*help_message[] = {
 import "C"
 
 func main() {
-	var folder_path *C.char = nil
-	C.get_jaz_folder_path(folder_path)
+	var folderPath *C.char = (*C.char)(C.malloc(260))
+	defer C.free(unsafe.Pointer(folderPath))
+
+	C.get_jaz_folder_path(folderPath)
+	fmt.Println("folderPath:", C.GoString(folderPath))
 }
