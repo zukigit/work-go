@@ -5,3 +5,4 @@ use ./pntr
 use ./map
 use ./type-assertions
 use ./cgo
+use ./test
