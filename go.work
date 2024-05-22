@@ -6,3 +6,4 @@ use ./map
 use ./type-assertions
 use ./cgo
 use ./test
+use ./stringer
