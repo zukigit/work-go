@@ -1,3 +1,3 @@
 module github.com/zukigit/work-go/stringer
 
-go 1.20
+go 1.22.3
