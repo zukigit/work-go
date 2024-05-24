@@ -25,4 +25,6 @@ func main() {
 		"Get fucked up",
 	}
 	fmt.Println(error)
+	fmt.Println("Exercise-----")
+	ErrorExercise()
 }
