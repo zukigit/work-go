@@ -7,9 +7,9 @@ import (
 )
 
 func main() {
-	r := strings.NewReader("Hello, Reader!zzaa")
+	r := strings.NewReader(strings.ToUpper("abcdefghijkmnlopqrstuvwxyz"))
 
-	b := make([]byte, 8)
+	b := make([]byte, 26)
 	for {
 		n, err := r.Read(b)
 		fmt.Printf("n = %v err = %v b = %v\n", n, err, b)
@@ -19,13 +19,9 @@ func main() {
 		}
 	}
 
-	test := strings.NewReader("z")
-	byte_arr := make([]byte, 1)
-	number, err := test.Read(byte_arr)
-
-	fmt.Printf("n = %v err = %v b = %v\n", number, err, byte_arr)
-	fmt.Printf("b[:n] = %q\n", b[:number])
-
 	fmt.Println("------")
 	exercise()
+
+	fmt.Println("------")
+	exerciseRoot13()
 }
