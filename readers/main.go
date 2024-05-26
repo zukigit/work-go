@@ -25,4 +25,7 @@ func main() {
 
 	fmt.Printf("n = %v err = %v b = %v\n", number, err, byte_arr)
 	fmt.Printf("b[:n] = %q\n", b[:number])
+
+	fmt.Println("------")
+	exercise()
 }
