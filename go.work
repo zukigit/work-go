@@ -9,3 +9,4 @@ use ./test
 use ./stringer
 use ./custom-error
 use ./readers
+use ./generics
