@@ -9,7 +9,8 @@ func sayHiAfter(sec time.Duration, channel chan int) {
 	time.Sleep(sec * time.Microsecond)
 	fmt.Println("HI! after", sec)
 
-	channel <- 0
+	channel <- 100
+	close(channel)
 }
 
 func sayHi(msg string) {
