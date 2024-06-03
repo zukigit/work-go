@@ -10,3 +10,4 @@ use ./stringer
 use ./custom-error
 use ./readers
 use ./generics
+use ./concurrency
