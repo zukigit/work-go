@@ -1,18 +1,16 @@
 package main
 
 import (
+	"context"
 	"fmt"
 	"time"
 )
 
-func sleep_t(signal_chan chan int, sec time.Duration) {
-	signal := 0
+func sleep_t(ctx context.Context, sec time.Duration) {
 	for {
 		select {
-		case signal = <-signal_chan:
-			if signal == 69 {
-				return
-			}
+		case <-ctx.Done():
+			return
 		default:
 			fmt.Println("I'm sleeping")
 			time.Sleep(sec * time.Second)
@@ -21,10 +19,10 @@ func sleep_t(signal_chan chan int, sec time.Duration) {
 }
 
 func selectGo() {
-	signal_chan := make(chan int)
+	ctx, cancel := context.WithCancel(context.Background())
 
-	go sleep_t(signal_chan, 10)
+	go sleep_t(ctx, 10)
 
-	time.Sleep(30 * time.Second)
-	signal_chan <- 69
+	time.Sleep(5 * time.Second)
+	cancel()
 }
