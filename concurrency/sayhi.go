@@ -10,6 +10,8 @@ func sayHiAfter(sec time.Duration, channel chan int) {
 	fmt.Println("HI! after", sec)
 
 	channel <- 100
+	channel <- 69
+	fmt.Println("send 69")
 	close(channel)
 }
 
@@ -18,5 +20,8 @@ func sayHi(msg string) {
 	go sayHiAfter(1, chnnel)
 	fmt.Println(msg)
 
-	<-chnnel
+	response := <-chnnel
+	fmt.Println("response", response)
+	// response = <-chnnel
+	// fmt.Println("response", response)
 }
