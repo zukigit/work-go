@@ -1,15 +1,31 @@
-go 1.22.3
+go 1.23.1
+
+toolchain go1.23.2
 
 use ./chan
+
 use ./pntr
+
 use ./map
+
 use ./type-assertions
+
 use ./cgo
+
 use ./test
+
 use ./stringer
+
 use ./custom-error
+
 use ./readers
+
 use ./generics
+
 use ./concurrency
+
 use ./mutex
+
 use ./dbFetch
+
+use ./logging
